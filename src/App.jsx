@@ -30,6 +30,14 @@ const noMap = {
   16: './memi/9.webp',
 }
 
+const preloadImages = (urls) => {
+  urls.forEach((src) => {
+    const img = new Image()
+    img.src = src
+  })
+}
+
+
 export default function App() {
   const target = 'WILL YOU MARRY ME'.toUpperCase()
   const punchline = 'WILL YOU BE MY VALENTINES'.toUpperCase()
@@ -106,6 +114,18 @@ export default function App() {
     }
   }, [usedLetters, lives])
 
+  useEffect(() => {
+    // preload hangman images
+    preloadImages(hangmanImages)
+
+    // preload memi / no images
+    preloadImages(Object.values(noMap))
+
+    // preload win image
+    const winImg = new Image()
+    winImg.src = './win.webp'
+  }, [])
+
   const onReset = () => {
     setLives(maxLives)
     setUsedLetters([])
@@ -136,7 +156,8 @@ export default function App() {
             />
           ) : (
             <img
-              src={noCount === 0 ? currentImage : noMap[noCount]}
+              key={noCount}
+              src={noMap[noCount]}
               alt="Hangman"
               className="absolute inset-0 w-full h-full object-contain"
             />
