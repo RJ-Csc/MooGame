@@ -1,52 +1,33 @@
 import { useState, useEffect } from 'react'
-import hang0 from './assets/hangman/hangman-0.png'
-import hang1 from './assets/hangman/hangman-1.png'
-import hang2 from './assets/hangman/hangman-2.png'
-import hang3 from './assets/hangman/hangman-3.png'
-import hang4 from './assets/hangman/hangman-4.png'
-import hang5 from './assets/hangman/hangman-5.png'
-import hang6 from './assets/hangman/hangman-6.png'
-import memi0 from './assets/memi/0.png'
-import memi1 from './assets/memi/1.png'
-import memi2 from './assets/memi/2.png'
-import memi3 from './assets/memi/3.png'
-import memi4 from './assets/memi/4.png'
-import memi5 from './assets/memi/5.png'
-import memi6 from './assets/memi/6.png'
-import memi7 from './assets/memi/7.png'
-import memi8 from './assets/memi/8.png'
-import memi9 from './assets/memi/9.png'
-import win from './assets/win.png'
-import lol from './assets/lol.png'
 
 const hangmanImages = [
-  hang0,
-  hang1,
-  hang2,
-  hang3,
-  hang4,
-  hang5,
-  hang6,
+  './hangman/hangman-0.webp',
+  './hangman/hangman-1.webp',
+  './hangman/hangman-2.webp',
+  './hangman/hangman-3.webp',
+  './hangman/hangman-4.webp',
+  './hangman/hangman-5.webp',
+  './hangman/hangman-6.webp',
 ]
 
 const noMap = {
-  0: memi0,
-  1: memi0,
-  2: memi1,
-  3: memi2,
-  4: memi2,
-  5: memi3,
-  6: memi3,
-  7: memi3,
-  8: memi4,
-  9: memi4,
-  10: memi5,
-  11: memi5,
-  12: memi6,
-  13: memi7,
-  14: memi7,
-  15: memi8,
-  16: memi9,
+  0: './lol.webp',
+  1: './memi/0.webp',
+  2: './memi/1.webp',
+  3: './memi/2.webp',
+  4: './memi/2.webp',
+  5: './memi/3.webp',
+  6: './memi/3.webp',
+  7: './memi/3.webp',
+  8: './memi/4.webp',
+  9: './memi/4.webp',
+  10: './memi/5.webp',
+  11: './memi/5.webp',
+  12: './memi/6.webp',
+  13: './memi/7.webp',
+  14: './memi/7.webp',
+  15: './memi/8.webp',
+  16: './memi/9.webp',
 }
 
 export default function App() {
@@ -140,7 +121,7 @@ export default function App() {
       {isSuccess ? (
         <div className="relative w-full h-3/4">
           <img
-            src={win}
+            src={'./win.webp'}
             alt="Hangman"
             className="absolute inset-0 w-full h-full object-contain"
           />
